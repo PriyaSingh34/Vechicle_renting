@@ -4,36 +4,42 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const StepOne = ({ data, handleChange, handleNext, errors }) => (
-  <div>
-    <TextField
-      label="First Name"
-      name="firstName"
-      value={data.firstName}
-      onChange={handleChange}
-      fullWidth
-      margin="normal"
-      error={!!errors.firstName}
-      helperText={errors.firstName}
-    />
-    <TextField
-      label="Last Name"
-      name="lastName"
-      value={data.lastName}
-      onChange={handleChange}
-      fullWidth
-      margin="normal"
-      error={!!errors.lastName}
-      helperText={errors.lastName}
-    />
-    <Button onClick={handleNext} variant="contained" color="secondary" fullWidth>
-      Next
-    </Button>
-  </div>
+
+
+ 
+   <div>
+   
+   <TextField
+     label="First Name"
+     name="firstName"
+     value={data.firstName}
+     onChange={handleChange}
+     fullWidth
+     margin="normal"
+     error={!!errors.firstName}
+     helperText={errors.firstName}
+   />
+   <TextField
+     label="Last Name"
+     name="lastName"
+     value={data.lastName}
+     onChange={handleChange}
+     fullWidth
+     margin="normal"
+     error={!!errors.lastName}
+     helperText={errors.lastName}
+   />
+   <Button onClick={handleNext} variant="contained" color="secondary" fullWidth>
+     Next
+   </Button>
+ </div>
+  
+  
 );
 
 const StepTwo = ({ data, handleChange, handleNext, errors }) => (
   <div>
-    <FormLabel component="legend">Number of Wheels</FormLabel>
+    <FormLabel component="legend">Choose type of vehicle</FormLabel>
     <RadioGroup name="wheels" value={data.wheels} onChange={handleChange}>
       <FormControlLabel value="2" control={<Radio />} label="2" />
       <FormControlLabel value="4" control={<Radio />} label="4" />
@@ -47,7 +53,7 @@ const StepTwo = ({ data, handleChange, handleNext, errors }) => (
 
 const StepThree = ({ data, vehicleTypes, handleChange, handleNext, errors }) => (
   <div>
-    <FormLabel component="legend">Type of Vehicle</FormLabel>
+    <FormLabel component="legend">Choose The Model </FormLabel>
     <RadioGroup name="vehicleType" value={data.vehicleType} onChange={handleChange}>
       {vehicleTypes.map(type => (
         <FormControlLabel key={type.model} value={type.type} control={<Radio />} label={type.type} />
@@ -63,7 +69,7 @@ const StepThree = ({ data, vehicleTypes, handleChange, handleNext, errors }) => 
 
 const StepFour = ({ data, vehicleModels, handleChange, handleNext, errors }) => (
   <div>
-    <FormLabel component="legend">Specific Model</FormLabel>
+    <FormLabel component="legend">Choose Specific Model</FormLabel>
     <RadioGroup name="vehicleModel" value={data.vehicleModel} onChange={handleChange}>
       {vehicleModels.map(model => (
         <FormControlLabel key={model} value={model} control={<Radio />} label={model} />
