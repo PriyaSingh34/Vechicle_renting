@@ -5,14 +5,18 @@ const { Booking } = require('../models'); // Import your Booking model
 // POST /api/bookings
 router.post('/bookings', async (req, res) => {
   try {
-    const { vehicleId, userId, startDate, endDate } = req.body;
+    const { vehicleId, firstName, lastName, wheels, vehicleType, vehicleModel, startDate, endDate } = req.body;
 
     // Example: Create a new booking
     const newBooking = await Booking.create({
       vehicleId,
-      userId,
+      firstName,
+      lastName,
+      wheels,
+      vehicleType,
+      vehicleModel,
       startDate,
-      endDate
+      endDate,
     });
 
     res.status(201).json({ message: 'Booking created successfully', booking: newBooking });

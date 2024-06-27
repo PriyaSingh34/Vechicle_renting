@@ -115,8 +115,13 @@ const App = () => {
     if (validate()) {
       if (step === 5) {
         // Submit the form data to the backend
-        axios.post('http://localhost:3000/api/bookings', {
-          vehicleId: vehicleModels.find(model => model === data.vehicleModel).id,
+        axios .post('http://localhost:3000/api/bookings', {
+          vehicleId: vehicleModels.find((model) => model === data.vehicleModel).id,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          wheels: data.wheels,
+          vehicleType: data.vehicleType,
+          vehicleModel: data.vehicleModel,
           startDate: data.dateRange[0],
           endDate: data.dateRange[1],
         })

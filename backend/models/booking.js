@@ -5,6 +5,26 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
+      firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      wheels: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      vehicleType: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      vehicleModel: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       startDate: {
         type: DataTypes.DATE,
         allowNull: false,
