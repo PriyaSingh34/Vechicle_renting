@@ -1,9 +1,18 @@
 const express = require('express');
+const cors = require('cors');
 const sequelize = require('./config/database');
 const vehicleRoutes = require('./routes/vehicleRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 
 const app = express();
+
+// Use the CORS middleware
+const corsOptions = {
+  origin: 'http://localhost:3001', // Replace with your frontend URL
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.use('/api', vehicleRoutes);
